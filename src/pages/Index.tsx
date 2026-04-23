@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AISection from "@/components/AISection";
-import WhySection from "@/components/WhySection";
-import Waitlist from "@/components/Waitlist";
+import HowItWorks from "@/components/HowItWorks";
+import Features from "@/components/Features";
+import SocialProof from "@/components/SocialProof";
+import AppDownload from "@/components/AppDownload";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,9 +12,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <AISection />
-        <WhySection />
-        <Waitlist />
+        <HowItWorks />
+        <Features />
+        <SocialProof />
+        <AppDownload />
       </main>
       <Footer />
     </div>
