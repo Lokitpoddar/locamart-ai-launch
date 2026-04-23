@@ -11,13 +11,12 @@ const Navbar = () => (
         <span className="font-bold text-xl tracking-tight">Locamart</span>
       </a>
       <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-        <a href="#" className="hover:text-foreground transition-colors">Home</a>
-        <a href="#features" className="hover:text-foreground transition-colors">Explore</a>
-        <a href="#sellers" className="hover:text-foreground transition-colors">For Sellers</a>
-        <a href="#about" className="hover:text-foreground transition-colors">About</a>
+        <a href="#ai" className="hover:text-foreground transition-colors">AI Engine</a>
+        <a href="#why" className="hover:text-foreground transition-colors">Why Us</a>
+        <a href="#waitlist" className="hover:text-foreground transition-colors">Waitlist</a>
       </nav>
-      <Button asChild className="bg-gradient-gold text-primary-foreground border-0 shadow-gold hover:opacity-90 font-semibold">
-        <a href="#download">Download App</a>
+      <Button asChild className="rounded-full bg-gradient-gold text-primary-foreground border-0 shadow-gold hover:opacity-90 font-semibold">
+        <a href="#waitlist">Get Early Access</a>
       </Button>
     </div>
   </header>
