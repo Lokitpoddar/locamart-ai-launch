@@ -2,53 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Near-black space */
-    --background: 230 32% 5%;            /* #080A12 */
-    --foreground: 0 0% 100%;
+    --background: 210 40% 99%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 32% 11%;                 /* #111827 */
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 32% 11%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Amber gold primary */
-    --primary: 36 91% 55%;               /* #F5A623 */
-    --primary-foreground: 230 32% 5%;
-    --primary-glow: 42 100% 65%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 252 88% 67%;
 
-    --secondary: 230 30% 12%;            /* #0D0F1E vibe */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 214 32% 94%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 230 25% 14%;
-    --muted-foreground: 220 12% 70%;
+    --muted: 214 32% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 36 91% 55%;
-    --accent-foreground: 230 32% 5%;
-    --accent-glow: 42 100% 70%;
+    --accent: 252 88% 67%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 252 100% 82%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 25% 18%;
-    --input: 230 25% 14%;
-    --ring: 36 91% 55%;
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 221 83% 53%;
 
-    --radius: 0.875rem;
+    --radius: 0.75rem;
 
-    --gradient-hero: radial-gradient(ellipse at 80% 10%, hsl(36 80% 30% / 0.25), transparent 55%),
-                     radial-gradient(ellipse at 10% 90%, hsl(230 60% 15% / 0.6), transparent 60%),
-                     linear-gradient(180deg, hsl(230 32% 5%), hsl(230 40% 3%));
+    --gradient-hero: radial-gradient(ellipse at 88% 8%, hsl(var(--accent) / 0.16), transparent 36%),
+                     radial-gradient(ellipse at 10% 18%, hsl(var(--primary) / 0.12), transparent 34%),
+                     linear-gradient(180deg, hsl(210 40% 99%), hsl(214 32% 96%));
     --gradient-gold: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(145deg, hsl(222 32% 13% / 0.7), hsl(230 32% 8% / 0.4));
-    --gradient-text: linear-gradient(135deg, hsl(42 100% 75%), hsl(36 91% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(214 32% 97%));
+    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
 
-    --shadow-gold: 0 0 40px hsl(var(--primary) / 0.45), 0 0 80px hsl(var(--primary) / 0.2);
-    --shadow-soft: 0 20px 60px -20px hsl(230 40% 2% / 0.8);
+    --shadow-gold: 0 18px 45px -24px hsl(var(--primary) / 0.55);
+    --shadow-soft: 0 24px 70px -38px hsl(222 47% 11% / 0.28);
   }
 }
 
@@ -61,18 +59,14 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     background: var(--gradient-hero);
     background-attachment: fixed;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4 {
-    font-family: 'Syne', system-ui, sans-serif;
-    letter-spacing: -0.02em;
-  }
-  .font-serif-display {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    letter-spacing: -0.01em;
+  h1, h2, h3, h4, .font-serif-display {
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    letter-spacing: 0;
   }
 }
 
@@ -89,10 +83,14 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
 
   .glass {
-    background: linear-gradient(145deg, hsl(222 32% 13% / 0.55), hsl(230 32% 8% / 0.35));
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: hsl(var(--card) / 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     border: 1px solid hsl(var(--border));
+  }
+
+  .ai-line {
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.28), transparent);
   }
 
   /* Scanline / noise overlay */
