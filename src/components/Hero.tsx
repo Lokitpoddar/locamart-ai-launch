@@ -16,7 +16,7 @@ const Hero = () => (
       <div className="space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
           <Sparkles className="w-3.5 h-3.5 text-accent-glow" />
-          <span className="text-xs font-medium tracking-wider uppercase text-accent-glow">Launching Soon 🚀</span>
+          <span className="text-xs font-medium tracking-wider uppercase text-accent-glow">Sasta maal. Fast delivery. Smart buying. 🚀</span>
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
