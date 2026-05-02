@@ -16,17 +16,17 @@ const Hero = () => (
       <div className="space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
           <Sparkles className="w-3.5 h-3.5 text-accent-glow" />
-          <span className="text-xs font-medium tracking-wider uppercase text-accent-glow">Launching Soon 🚀</span>
+          <span className="text-xs font-medium tracking-wider uppercase text-accent-glow">Sasta maal. Fast delivery. Smart buying. 🚀</span>
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
-          India's First{" "}
-          <span className="text-gradient">AI-Powered</span>{" "}
-          B2B Commerce Platform
+          India ka{" "}
+          <span className="text-gradient">Smart B2B</span>{" "}
+          Supply Platform
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-          Revolutionizing wholesale-to-retail supply with intelligence, speed, and precision. Built for the next era of Indian commerce.
+          Get better prices, faster delivery, and smarter inventory decisions—all in one place built for Indian retailers.
         </p>
 
         <div className="flex flex-wrap gap-4">
@@ -41,11 +41,11 @@ const Hero = () => (
         </div>
 
         <div className="flex items-center gap-8 pt-4 text-sm text-muted-foreground">
-          <div><span className="text-2xl font-bold text-foreground">10K+</span><br/>Retailers waiting</div>
+          <div><span className="text-2xl font-bold text-foreground">10,000+</span><br/>dukaan wale waiting 🔥</div>
           <div className="w-px h-10 bg-border" />
           <div><span className="text-2xl font-bold text-foreground">500+</span><br/>Wholesale partners</div>
           <div className="w-px h-10 bg-border" />
-          <div><span className="text-2xl font-bold text-foreground">AI</span><br/>at the core</div>
+          <div><span className="text-2xl font-bold text-foreground">Fast</span><br/>delivery + credit</div>
         </div>
       </div>
 
