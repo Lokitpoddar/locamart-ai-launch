@@ -20,13 +20,13 @@ const Hero = () => (
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
-          India's First{" "}
-          <span className="text-gradient">AI-Powered</span>{" "}
-          B2B Commerce Platform
+          India ka{" "}
+          <span className="text-gradient">Smart B2B</span>{" "}
+          Supply Platform
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-          Revolutionizing wholesale-to-retail supply with intelligence, speed, and precision. Built for the next era of Indian commerce.
+          Get better prices, faster delivery, and smarter inventory decisions—all in one place built for Indian retailers.
         </p>
 
         <div className="flex flex-wrap gap-4">
