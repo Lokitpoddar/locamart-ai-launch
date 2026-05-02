@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Store, Truck, ShieldCheck } from "lucide-react";
+import { ArrowRight, Star, Store, Truck } from "lucide-react";
 
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
+  <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-background">
+    {/* Subtle radial glow */}
+    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-br from-primary/[0.06] via-accent/[0.04] to-transparent blur-3xl pointer-events-none" />
+    <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.03] blur-3xl pointer-events-none" />
+
     <div className="container mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
       <div className="space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5">
@@ -21,9 +25,9 @@ const Hero = () => (
         </p>
 
         <div className="flex flex-wrap gap-4">
-          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft h-12 px-8 text-base">
+          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft h-14 px-10 text-base font-bold text-lg">
             <a href="#waitlist">
-              Start Buying <ArrowRight className="ml-2 w-4 h-4" />
+              Start Buying <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-border bg-card hover:bg-muted text-foreground h-12 px-8 text-base">
@@ -34,72 +38,97 @@ const Hero = () => (
         <div className="flex flex-wrap items-center gap-6 pt-2 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-            <span><strong className="text-foreground">10,000+</strong> retailers waiting</span>
+            <span><strong className="text-foreground">10,000+</strong> dukaan wale waiting</span>
           </div>
           <div className="flex items-center gap-2">
             <Store className="w-4 h-4 text-primary" />
-            <span><strong className="text-foreground">500+</strong> wholesalers</span>
+            <span><strong className="text-foreground">500+</strong> verified suppliers</span>
           </div>
           <div className="flex items-center gap-2">
             <Truck className="w-4 h-4 text-accent" />
-            <span><strong className="text-foreground">Fast</strong> delivery</span>
+            <span><strong className="text-foreground">Fast</strong> delivery across cities</span>
           </div>
         </div>
       </div>
 
-      {/* Product UI Mockup */}
-      <div className="relative">
-        <div className="rounded-2xl border border-border bg-card shadow-elevated overflow-hidden">
-          {/* App header */}
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/50">
-            <div className="w-3 h-3 rounded-full bg-red-400" />
-            <div className="w-3 h-3 rounded-full bg-amber-400" />
-            <div className="w-3 h-3 rounded-full bg-green-400" />
-            <span className="ml-2 text-xs text-muted-foreground font-medium">Locamart — Retailer Dashboard</span>
-          </div>
-          {/* Product list */}
-          <div className="p-4 space-y-3">
-            {[
-              { name: "Tata Salt (1kg)", price: "₹18", mrp: "₹22", savings: "18%", stock: "In Stock" },
-              { name: "Parle-G Biscuit (800g)", price: "₹72", mrp: "₹85", savings: "15%", stock: "In Stock" },
-              { name: "Fortune Oil (1L)", price: "₹145", mrp: "₹168", savings: "14%", stock: "Low Stock" },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-muted/30 border border-border/50 hover:border-primary/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
-                    {item.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-medium text-sm text-foreground">{item.name}</div>
-                    <div className="text-xs text-muted-foreground">MRP {item.mrp}</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="font-bold text-primary text-sm">{item.price}</div>
-                  <div className="text-xs text-green-600 font-medium">Save {item.savings}</div>
-                </div>
-              </div>
-            ))}
-            {/* Order summary */}
-            <div className="mt-2 p-3 rounded-xl bg-primary/5 border border-primary/20">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">3 items selected</span>
-                <span className="font-bold text-foreground">₹235 <span className="text-xs text-muted-foreground line-through">₹275</span></span>
-              </div>
-              <div className="mt-2 w-full h-9 rounded-lg bg-primary flex items-center justify-center text-primary-foreground text-sm font-semibold">
-                Place Order →
-              </div>
-            </div>
-          </div>
+      {/* Supply Flow Visualization */}
+      <div className="relative flex items-center justify-center min-h-[400px]">
+        {/* Floating network dots */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[
+            { top: '10%', left: '15%', size: 4, delay: '0s', duration: '6s' },
+            { top: '25%', left: '80%', size: 3, delay: '1s', duration: '7s' },
+            { top: '60%', left: '10%', size: 3, delay: '2s', duration: '5s' },
+            { top: '75%', left: '85%', size: 4, delay: '0.5s', duration: '8s' },
+            { top: '40%', left: '5%', size: 2, delay: '3s', duration: '6s' },
+            { top: '85%', left: '50%', size: 3, delay: '1.5s', duration: '7s' },
+            { top: '15%', left: '55%', size: 2, delay: '2.5s', duration: '5s' },
+            { top: '50%', left: '90%', size: 3, delay: '0.8s', duration: '6s' },
+          ].map((dot, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-primary/20"
+              style={{
+                top: dot.top,
+                left: dot.left,
+                width: dot.size,
+                height: dot.size,
+                animation: `float ${dot.duration} ease-in-out ${dot.delay} infinite`,
+              }}
+            />
+          ))}
+          {/* Thin connecting lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.07]" viewBox="0 0 400 400">
+            <line x1="60" y1="40" x2="320" y2="100" stroke="hsl(var(--primary))" strokeWidth="1" />
+            <line x1="40" y1="240" x2="340" y2="300" stroke="hsl(var(--accent))" strokeWidth="1" />
+            <line x1="60" y1="40" x2="40" y2="240" stroke="hsl(var(--primary))" strokeWidth="0.5" />
+            <line x1="320" y1="100" x2="340" y2="300" stroke="hsl(var(--accent))" strokeWidth="0.5" />
+            <line x1="200" y1="60" x2="200" y2="340" stroke="hsl(var(--primary))" strokeWidth="0.5" />
+          </svg>
         </div>
 
-        {/* Floating badges */}
-        <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-medium shadow-soft">
-          <ShieldCheck className="w-3 h-3 inline mr-1" />
-          Verified Suppliers
-        </div>
-        <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-medium shadow-soft">
-          🚚 Free delivery on ₹500+
+        {/* Supply flow cards */}
+        <div className="relative flex flex-col items-center gap-4 w-full max-w-xs">
+          {/* Retailer */}
+          <div className="w-full p-4 rounded-2xl bg-card border border-border shadow-soft text-center">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2">
+              <Store className="w-5 h-5 text-primary" />
+            </div>
+            <div className="font-semibold text-foreground text-sm">Retailer Demand</div>
+            <div className="text-xs text-muted-foreground mt-1">Order placed for 50 items</div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-px h-6 bg-gradient-to-b from-primary/40 to-accent/40" />
+            <div className="w-2 h-2 rotate-45 border-b border-r border-accent/40" />
+          </div>
+
+          {/* AI Platform */}
+          <div className="w-full p-4 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 shadow-card text-center">
+            <div className="text-xs font-medium text-primary mb-2">🧠 Locamart AI</div>
+            <div className="font-semibold text-foreground text-sm">Best Price Found</div>
+            <div className="text-xs text-muted-foreground mt-1">Matched across 12 suppliers</div>
+            {/* AI suggestion tag */}
+            <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs text-primary font-medium">
+              ✨ AI Suggestion: Reorder in 2 days
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-px h-6 bg-gradient-to-b from-accent/40 to-primary/40" />
+            <div className="w-2 h-2 rotate-45 border-b border-r border-primary/40" />
+          </div>
+
+          {/* Delivery */}
+          <div className="w-full p-4 rounded-2xl bg-card border border-border shadow-soft text-center">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2">
+              <Truck className="w-5 h-5 text-accent" />
+            </div>
+            <div className="font-semibold text-foreground text-sm">Fast Delivery</div>
+            <div className="text-xs text-muted-foreground mt-1">Delivered to your shop</div>
+          </div>
         </div>
       </div>
     </div>
