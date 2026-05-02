@@ -41,11 +41,11 @@ const Hero = () => (
         </div>
 
         <div className="flex items-center gap-8 pt-4 text-sm text-muted-foreground">
-          <div><span className="text-2xl font-bold text-foreground">10K+</span><br/>Retailers waiting</div>
+          <div><span className="text-2xl font-bold text-foreground">10,000+</span><br/>dukaan wale waiting 🔥</div>
           <div className="w-px h-10 bg-border" />
           <div><span className="text-2xl font-bold text-foreground">500+</span><br/>Wholesale partners</div>
           <div className="w-px h-10 bg-border" />
-          <div><span className="text-2xl font-bold text-foreground">AI</span><br/>at the core</div>
+          <div><span className="text-2xl font-bold text-foreground">Fast</span><br/>delivery + credit</div>
         </div>
       </div>
 
