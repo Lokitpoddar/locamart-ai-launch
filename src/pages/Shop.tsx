@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowLeft, Bell, User, ShoppingCart, ClipboardList, TrendingUp, Calculator, Package, Truck, CreditCard, CheckCircle2, MessageSquare, Star, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
