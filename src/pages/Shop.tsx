@@ -64,8 +64,13 @@ const Shop = () => {
     { from: "bot", text: "Aapke area me ye products fast bik rahe hain 👇", type: "text" },
   ]);
   const [activeTab, setActiveTab] = useState("kharido");
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   const addMessage = (msg: ChatMessage) => setMessages((prev) => [...prev, msg]);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleAddProduct = (product: Product) => {
     setSelectedProduct(product);
