@@ -6,48 +6,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 220 25% 12%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 12%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 12%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 152 60% 38%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 96% 56%;
+    --primary-foreground: 0 0% 8%;
 
-    --primary-glow: 152 55% 45%;
+    --secondary: 45 100% 94%;
+    --secondary-foreground: 0 0% 8%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 220 25% 12%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
-
-    --accent: 213 90% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --accent-glow: 213 85% 55%;
+    --accent: 45 96% 56%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 152 60% 38%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 45 96% 56%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(180deg, hsl(210 40% 98%), hsl(152 30% 96%));
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-
-    --shadow-soft: 0 4px 24px -4px hsl(220 20% 20% / 0.08);
-    --shadow-card: 0 8px 32px -8px hsl(220 20% 20% / 0.1);
-    --shadow-elevated: 0 16px 48px -12px hsl(220 20% 20% / 0.12);
+    --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.06);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.08);
+    --shadow-elevated: 0 16px 48px -12px hsl(0 0% 0% / 0.1);
   }
 }
 
@@ -71,21 +62,10 @@
 
 @layer utilities {
   .text-gradient {
-    background: var(--gradient-text);
+    background: linear-gradient(135deg, hsl(45 96% 56%), hsl(35 95% 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); opacity: 0.3; }
-  50% { transform: translateY(-12px); opacity: 0.7; }
-}
-  .bg-gradient-primary {
-    background: var(--gradient-primary);
-  }
-  .bg-gradient-card {
-    background: var(--gradient-card);
   }
   .shadow-soft {
     box-shadow: var(--shadow-soft);
