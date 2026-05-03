@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowLeft, Bell, User, ShoppingCart, ClipboardList, TrendingUp, Calculator, Package, Truck, CreditCard, CheckCircle2, MessageSquare, Star, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -64,8 +64,13 @@ const Shop = () => {
     { from: "bot", text: "Aapke area me ye products fast bik rahe hain 👇", type: "text" },
   ]);
   const [activeTab, setActiveTab] = useState("kharido");
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   const addMessage = (msg: ChatMessage) => setMessages((prev) => [...prev, msg]);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleAddProduct = (product: Product) => {
     setSelectedProduct(product);
@@ -280,6 +285,7 @@ const Shop = () => {
             </div>
           </div>
         )}
+        <div ref={chatEndRef} />
       </div>
 
       {/* Bottom Navigation */}
