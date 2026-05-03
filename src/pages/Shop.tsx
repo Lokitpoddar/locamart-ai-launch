@@ -285,6 +285,7 @@ const Shop = () => {
             </div>
           </div>
         )}
+        <div ref={chatEndRef} />
       </div>
 
       {/* Bottom Navigation */}
