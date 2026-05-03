@@ -2,64 +2,49 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, Users } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 
 const Waitlist = () => {
-  const [form, setForm] = useState({ name: "", email: "", business: "" });
+  const [phone, setPhone] = useState("");
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.business) {
-      toast.error("Please fill in all fields");
+    if (!phone) {
+      toast.error("Please enter your phone number");
       return;
     }
-    toast.success("🎉 You're on the list! We'll be in touch soon.");
-    setForm({ name: "", email: "", business: "" });
+    toast.success("🎉 You're on the list! We'll contact you soon.");
+    setPhone("");
   };
 
   return (
-    <section id="waitlist" className="py-24 bg-primary/5">
+    <section id="waitlist" className="py-20 bg-background">
       <div className="container mx-auto">
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wide">Get Started</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-foreground">
-            Join 10,000+ retailers sourcing smarter
+        <div className="max-w-xl mx-auto text-center p-10 rounded-3xl bg-muted border border-border">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Sabse pehle join karo
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Register karo, first batch mein access paao — no commitment, no charges.
+          <p className="text-muted-foreground mb-8">
+            Locamart jaldi launch ho raha hai. Early users ko best deals milte hain.
           </p>
-        </div>
 
-        <form onSubmit={submit} className="max-w-xl mx-auto p-8 rounded-2xl bg-card border border-border shadow-elevated space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
+          <form onSubmit={submit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <Input
-              placeholder="Aapka naam"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="bg-background border-border h-12"
+              placeholder="Aapka Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="bg-background border-border h-12 rounded-lg flex-1"
             />
-            <Input
-              type="email"
-              placeholder="Email address"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="bg-background border-border h-12"
-            />
+            <Button type="submit" className="bg-destructive text-destructive-foreground hover:bg-destructive/90 h-12 px-6 rounded-lg font-bold whitespace-nowrap">
+              Mujhe early access chahiye
+            </Button>
+          </form>
+
+          <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground mt-4">
+            <AlertCircle className="w-3 h-3" />
+            <span>⚡ LIMITED FIXED · ONBOARDING STARTS NEXT WEEK</span>
           </div>
-          <Input
-            placeholder="Business type (Retailer, Wholesaler, Distributor...)"
-            value={form.business}
-            onChange={(e) => setForm({ ...form, business: e.target.value })}
-            className="bg-background border-border h-12"
-          />
-          <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base">
-            Start Sourcing Smarter <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
-          <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground pt-2">
-            <Users className="w-3 h-3" />
-            <span>10,000+ already joined · No spam, just one launch email</span>
-          </div>
-        </form>
+        </div>
       </div>
     </section>
   );
