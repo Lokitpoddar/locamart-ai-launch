@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Store, Truck } from "lucide-react";
+import { ArrowRight, Star, Store, Truck, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => (
   <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-background">
@@ -26,9 +27,9 @@ const Hero = () => (
 
         <div className="flex flex-wrap gap-4">
           <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft h-14 px-10 text-base font-bold text-lg">
-            <a href="#waitlist">
+            <Link to="/shop">
               Start Buying <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-border bg-card hover:bg-muted text-foreground h-12 px-8 text-base">
             <a href="#waitlist">Join Waitlist</a>
