@@ -3,9 +3,11 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { toast } from "sonner";
 import { AlertCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Waitlist = () => {
   const [phone, setPhone] = useState("");
+  const { ref, isVisible } = useScrollAnimation();
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const Waitlist = () => {
   return (
     <section id="waitlist" className="py-20 bg-background">
       <div className="container mx-auto">
-        <div className="max-w-xl mx-auto text-center p-10 rounded-3xl bg-muted border border-border">
+        <div ref={ref} className={`max-w-xl mx-auto text-center p-10 rounded-3xl bg-muted border border-border transition-all duration-700 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
             Sabse pehle join karo
           </h2>
