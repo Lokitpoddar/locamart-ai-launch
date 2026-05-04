@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const reviews = [
   {
@@ -17,36 +18,40 @@ const reviews = [
   },
 ];
 
-const Testimonials = () => (
-  <section className="py-20 bg-primary/10">
-    <div className="container mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-foreground italic">
-        Dukandaar kya bol rahe hain
-      </h2>
+const Testimonials = () => {
+  const { ref, isVisible } = useScrollAnimation();
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {reviews.map((r, i) => (
-          <div key={i} className="p-6 rounded-2xl bg-card border border-border shadow-soft">
-            <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, j) => (
-                <Star key={j} className="w-4 h-4 text-primary fill-primary" />
-              ))}
-            </div>
-            <p className="text-foreground mb-6 leading-relaxed italic">"{r.text}"</p>
-            <div className="flex items-center gap-3">
-              <div className={`w-10 h-10 rounded-full ${r.color} flex items-center justify-center text-primary-foreground font-bold text-sm`}>
-                {r.initials}
+  return (
+    <section className="py-20 bg-primary/10">
+      <div ref={ref} className="container mx-auto">
+        <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 text-foreground italic transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          Dukandaar kya bol rahe hain
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {reviews.map((r, i) => (
+            <div key={i} className={`p-6 rounded-2xl bg-card border border-border shadow-soft transition-all duration-700 hover:shadow-card hover:-translate-y-1 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`} style={{ transitionDelay: `${i * 200}ms` }}>
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className="w-4 h-4 text-primary fill-primary" />
+                ))}
               </div>
-              <div>
-                <div className="font-bold text-sm text-foreground">{r.name}</div>
-                <div className="text-xs text-muted-foreground">{r.location}</div>
+              <p className="text-foreground mb-6 leading-relaxed italic">"{r.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full ${r.color} flex items-center justify-center text-primary-foreground font-bold text-sm`}>
+                  {r.initials}
+                </div>
+                <div>
+                  <div className="font-bold text-sm text-foreground">{r.name}</div>
+                  <div className="text-xs text-muted-foreground">{r.location}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Testimonials;
